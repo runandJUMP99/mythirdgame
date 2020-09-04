@@ -33,7 +33,7 @@ function jump() {
     
     if (position <= 0) {
         const timerId = setInterval(() => {
-            if (count === 6) {
+            if (count === 7) {
                 clearInterval(timerId);
     
                 const downTimerId = setInterval(() => {
@@ -55,7 +55,7 @@ function jump() {
 
     } else if (position >= 239) {
         const timerId = setInterval(() => {
-            if (count === 6) {
+            if (count === 7) {
                 clearInterval(timerId);
     
                 const downTimerId = setInterval(() => {
@@ -127,9 +127,10 @@ function updateAlertMessage() {
     }, 5000);
 }
 
-function generateObstacle(location) {
+function generateObstacle(location, length) {
     const obstacle = document.createElement("div");
-    let obstacleDistance = 1000;
+    let obstacleDistance = 1500 ;
+    let obstacleLength;
 
     if (!isGameOver) {
         obstacle.classList.add("obstacle");
@@ -139,13 +140,24 @@ function generateObstacle(location) {
         } else {
             obstacle.style.top = 0;
         }
+
+        if (length) {
+            obstacle.style.width = length + "px";
+            obstacleLength = length;
+        }
     }
 
     obstacle.style.left = obstacleDistance + "px";
     grid.appendChild(obstacle);
 
     let timerId = setInterval(() => {
-        if (obstacleDistance > 0 && obstacleDistance < 60 && ((obstacle.style.bottom === "0px" && position <= 60) || (obstacle.style.top === "0px" && position >= 240))) {
+        if (obstacleDistance < 0 && obstacleLength > 0) {
+            obstacleDistance += 20;
+            obstacleLength -= 20;
+            obstacle.style.width = obstacleLength + "px";
+        }
+
+        if (obstacleDistance > 0 && obstacleDistance < 20 && ((obstacle.style.bottom === "0px" && position <= 60) || (obstacle.style.top === "0px" && position >= 240))) {
             clearInterval(timerId);
             alertMessage.innerHTML = "Game Over";
             isGameOver = true;
@@ -161,33 +173,158 @@ function generateObstacle(location) {
 }
 
 function levelOne() {
-    generateObstacle("bottom");
-
+    //FIRST CHUNK
+    generateObstacle("bottom", null);
     setTimeout(() => {
-        generateObstacle("bottom");
+        generateObstacle("bottom", null);
+
+        setTimeout(() => {
+            generateObstacle("bottom", null);
+
+            setTimeout(() => {
+                generateObstacle("bottom", null);
+            }, 1000);
+        }, 500);
+    }, 1000);
+
+    //SECOND CHUNK
+    setTimeout(() => {
+        generateObstacle("bottom", 1500);
+
+        setTimeout(() => {
+            generateObstacle("top", null);
+    
+            setTimeout(() => {
+                generateObstacle("top", null);
+    
+                setTimeout(() => {
+                    generateObstacle("top", null);
+                }, 1000);
+            }, 500);
+        }, 1000);
+    }, 4500);
+
+    //THIRD CHUNK
+    setTimeout(() => {
+        generateObstacle("top", 250);
+        
+        setTimeout(() => {
+            generateObstacle("bottom", 250);
+            
+            setTimeout(() => {
+                generateObstacle("top", 250);
+                
+                setTimeout(() => {
+                    generateObstacle("bottom", 250);
+                    
+                    setTimeout(() => {
+                        generateObstacle("top", 250);
+
+                        setTimeout(() => {
+                            generateObstacle("bottom");
+
+                            setTimeout(() => {
+                                generateObstacle("bottom");
+                            }, 500);
+                        }, 500);
+                    }, 750);
+                }, 1000);
+            }, 1000)
+        }, 1000);
+    }, 8000)
+
+    //FOURTH CHUNK
+    setTimeout(() => {
+        generateObstacle("bottom", 700);
+
+        setTimeout(() => {
+            generateObstacle("top");
+
+            setTimeout(() => {
+                generateObstacle("top");
+
+                setTimeout(() => {
+                    generateObstacle("top", 700);
+
+                    setTimeout(() => {
+                        generateObstacle("bottom")
+
+                        setTimeout(() => {
+                            generateObstacle("bottom");
+
+                            setTimeout(() => {
+                                generateObstacle("bottom", 700);
+
+                                setTimeout(() => {
+                                    generateObstacle("top");
+
+                                    setTimeout(() => {
+                                        generateObstacle("top");
+
+                                        setTimeout(() => {
+                                            generateObstacle("top", 700);
+
+                                            setTimeout(() => {
+                                                generateObstacle("bottom");
+
+                                                setTimeout(() => {
+                                                    generateObstacle("bottom");
+                                                }, 500);
+                                            }, 500)
+                                        }, 600)
+                                    }, 500);
+                                }, 500);
+                            }, 600);
+                        }, 500)
+                    }, 500);
+                }, 600)
+            }, 500);
+        }, 500);
+    }, 14000)
+    
+    //FIFTH CHUNK
+    setTimeout(() => {
+        generateObstacle("top", 250);
 
         setTimeout(() => {
             generateObstacle("bottom");
 
             setTimeout(() => {
-                generateObstacle("bottom");
-            }, 1000);
-        }, 500);
-    }, 1000);
+                generateObstacle("bottom", 250);
 
-    setTimeout(() => {
-        let count = 0;
+                setTimeout(() => {
+                    generateObstacle("top");
 
-        let timerId = setInterval(() => {
-            if (count === 200) {
-                clearInterval(timerId);
-            }
+                    setTimeout(() => {
+                        generateObstacle("top", 150)
 
-            generateObstacle("bottom");
-            count++;
-        }, 10);
-    }, 4000);
+                        setTimeout(() => {
+                            generateObstacle("bottom", 150);
+
+                            setTimeout(() => {
+                                generateObstacle("top", 150);
+
+                                setTimeout(() => {
+                                    generateObstacle("bottom", 150);
+
+                                    setTimeout(() => {
+                                        generateObstacle("top", 150);
+
+                                        setTimeout(() => {
+                                            generateObstacle("bottom", 150);
+                                        }, 500);
+                                    }, 500);
+                                }, 500);
+                            }, 500);
+                        }, 500)
+                    }, 500);
+                }, 500);
+            }, 500);
+        }, 500)
+    }, 20500);
 }
+
+
 
 updateAlertMessage(); 
 updateTime();
