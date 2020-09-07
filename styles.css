@@ -2,6 +2,7 @@ html,
 body {
     height: 100%;
     margin: 0;
+    transition: background-color 0.5s ease-out;
 }
 
 body {
@@ -10,15 +11,30 @@ body {
 }
 
 #alert {
-    left: 2rem;
+    bottom: 5rem;
+    left: 0;
+    margin: auto;
     position: fixed;
-    top: 2rem;
+    right: 0;
+    text-align: center;
 }
 
-#score {
+#alert button {
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    font-size: 2rem;
+    margin: auto;
+    padding: 0.5rem 2rem;
+}
+
+.stats-display {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 4rem;
     position: fixed;
-    bottom: 2rem;
-    left: 2rem;
+    top: 3rem;
+    width: 90%;
 }
 
 .grid {
@@ -36,6 +52,7 @@ body {
     bottom: 0;
     height: 60px;
     position: absolute;
+    transition: background-color 0.5s ease-out;
     width: 60px;
 }
 
