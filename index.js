@@ -159,7 +159,7 @@ function generateObstacle(location, length) {
             obstacle.style.width = obstacleLength + "px";
         }
 
-        if (obstacleDistance > 0 && obstacleDistance < 60 && ((obstacle.style.bottom === "0px" && position <= 60) || (obstacle.style.top === "0px" && position >= 240))) {
+        if (obstacleDistance > 0 && obstacleDistance < 60 && ((obstacle.style.bottom === "0px" && position <= 50) || (obstacle.style.top === "0px" && position >= 250))) {
             clearInterval(timerId);
             alertMessage.innerHTML = "Game Over";
             isGameOver = true;
@@ -191,7 +191,6 @@ function levelOne() {
 
     //SECOND CHUNK
     setTimeout(() => {
-        body.style.background = "#e0ece4";
         generateObstacle("bottom", 1500);
 
         setTimeout(() => {
@@ -317,8 +316,23 @@ function levelOne() {
                                             generateObstacle("bottom", 150);
 
                                             setTimeout(() => {
-                                                levelTwo();
-                                            }, 2000);
+                                                isGameOver = true;
+                                                alertMessage.innerHTML = "Breathe...";
+                                                
+                                                setTimeout(() => {
+                                                    while (grid.childNodes[2]) {
+                                                        grid.removeChild(grid.childNodes[2]);
+                                                    }
+
+                                                    alertMessage.innerHTML = "Here comes level 2";
+                                                    
+                                                    setTimeout(() => {
+                                                        isGameOver = false;
+                                                        updateAlertMessage();
+                                                        levelTwo();
+                                                    }, 2500);
+                                                }, 2500);
+                                            }, 2500);
                                         }, 500);
                                     }, 500);
                                 }, 500);
@@ -332,6 +346,7 @@ function levelOne() {
 }
 
 function levelTwo() {
+    console.log("level 2");
     level++;
     levelDisplay.innerHTML = "Level: " + level;
 
@@ -518,8 +533,27 @@ function levelTwo() {
                                                                     generateObstacle("top", 250);
 
                                                                     setTimeout(() => {
-                                                                        levelThree();
-                                                                    }, 2000);
+                                                                        isGameOver = true;
+                                                                        alertMessage.innerHTML = "Not bad!";
+                                                                        
+                                                                        setTimeout(() => {
+                                                                            while (grid.childNodes[2]) {
+                                                                                grid.removeChild(grid.childNodes[2]);
+                                                                            }
+                        
+                                                                            alertMessage.innerHTML = "But the night is dark and full of terrors...";
+
+                                                                            setTimeout(() => {
+                                                                                alertMessage.innerHTML = "(In other words, here comes level 3)";
+
+                                                                                setTimeout(() => {
+                                                                                    isGameOver = false;
+                                                                                    updateAlertMessage();
+                                                                                    levelThree();
+                                                                                }, 2500);
+                                                                            }, 2500);
+                                                                        }, 2500);
+                                                                    }, 2500);
                                                                 }, 500);
                                                             }, 500);
                                                         }, 500);
@@ -648,6 +682,77 @@ function levelThree() {
     }, 5000);
 
     //THIRD CHUNK
+    setTimeout(() => {
+        generateObstacle("top", 780);
+        generateObstacle("bottom");
+
+        setTimeout(() => {
+            generateObstacle("bottom");
+
+            setTimeout(() => {
+                generateObstacle("bottom");
+
+                setTimeout(() => {
+                    generateObstacle("bottom");
+                    
+                    setTimeout(() => {
+                        generateObstacle("bottom", 780);
+                        generateObstacle("top");
+
+                        setTimeout(() => {
+                            generateObstacle("top");
+
+                            setTimeout(() => {
+                                generateObstacle("top");
+
+                                setTimeout(() => {
+                                    generateObstacle("top");
+
+                                    setTimeout(() => {
+                                        generateObstacle("top", 325);
+                                        generateObstacle("bottom");
+
+                                        setTimeout(() => {
+                                            generateObstacle("bottom");
+
+                                            setTimeout(() => {
+                                                generateObstacle("bottom", 325);
+                                                generateObstacle("top");
+
+                                                setTimeout(() => {
+                                                    generateObstacle("top");
+
+                                                    setTimeout(() => {
+                                                        generateObstacle("top", 100);
+                                                        generateObstacle("bottom");
+
+                                                        setTimeout(() => {
+                                                            generateObstacle("bottom", 100);
+                                                            generateObstacle("top");
+
+                                                            setTimeout(() => {
+                                                                generateObstacle("top", 100);
+                                                                generateObstacle("bottom");
+
+                                                                setTimeout(() => {
+                                                                    generateObstacle("bottom", 100);
+                                                                    generateObstacle("top");
+                                                                }, 675);
+                                                            }, 675);
+                                                        }, 675);
+                                                    }, 675);
+                                                }, 500);
+                                            }, 650)
+                                        }, 500);
+                                    }, 650);
+                                }, 500);
+                            }, 500);
+                        }, 500);
+                    }, 650);
+                }, 500);
+            }, 500);
+        }, 500);
+    }, 11100);
 }
 
 
@@ -659,5 +764,5 @@ startButton.addEventListener("click", function() {
     updateAlertMessage(); 
     updateTime();
     
-    levelOne();
+    levelThree();
 });
