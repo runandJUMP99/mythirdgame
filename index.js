@@ -953,7 +953,7 @@ function levelFour() {
     dino.style.background = "white";
     grid.style.borderColor = "white";
 
-    alert("level 4!");
+    alert("level 4! (Coming soon)");
 }
 
 
@@ -965,5 +965,5 @@ startButton.addEventListener("click", function() {
     updateAlertMessage(); 
     updateTime();
     
-    levelFour();
+    levelOne();
 });
