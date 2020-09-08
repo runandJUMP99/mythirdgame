@@ -159,7 +159,7 @@ function generateObstacle(location, length) {
             obstacle.style.width = obstacleLength + "px";
         }
 
-        if (obstacleDistance > 0 && obstacleDistance < 60 && ((obstacle.style.bottom === "0px" && position <= 50) || (obstacle.style.top === "0px" && position >= 250))) {
+        if (obstacleDistance > 0 && obstacleDistance < 60 && ((obstacle.style.bottom === "0px" && position <= 50) || (obstacle.style.top === "0px" && position >= 240))) {
             clearInterval(timerId);
             alertMessage.innerHTML = "Game Over";
             isGameOver = true;
