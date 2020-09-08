@@ -329,6 +329,7 @@ function levelOne() {
                                                     setTimeout(() => {
                                                         isGameOver = false;
                                                         updateAlertMessage();
+                                                        updateTime();
                                                         levelTwo();
                                                     }, 2500);
                                                 }, 2500);
@@ -549,6 +550,7 @@ function levelTwo() {
                                                                                 setTimeout(() => {
                                                                                     isGameOver = false;
                                                                                     updateAlertMessage();
+                                                                                    updateTime();
                                                                                     levelThree();
                                                                                 }, 2500);
                                                                             }, 2500);
@@ -911,6 +913,7 @@ function levelThree() {
                                                                                                                         setTimeout(() => {
                                                                                                                             isGameOver = false;
                                                                                                                             updateAlertMessage();
+                                                                                                                            updateTime();
                                                                                                                             levelFour();
                                                                                                                         }, 2500);
                                                                                                                     }, 2500);
