@@ -764,5 +764,5 @@ startButton.addEventListener("click", function() {
     updateAlertMessage(); 
     updateTime();
     
-    levelThree();
+    levelOne();
 });
