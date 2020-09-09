@@ -10,6 +10,11 @@ body {
     overflow: hidden;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 #alert {
     bottom: 5rem;
     left: 0;
