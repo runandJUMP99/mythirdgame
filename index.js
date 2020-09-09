@@ -1484,7 +1484,7 @@ function levelFive() {
                 }, 250);
             }, 250);
         }, 250);
-    }, 6000);
+    }, 8000);
 
     //FIFTH CHUNK
     setTimeout(() => {
@@ -1555,7 +1555,7 @@ function levelFive() {
                 }, 250);
             }, 250);
         }, 250);
-    }, 8000);
+    }, 10000);
 }
 
 startButton.addEventListener("click", startGame);
