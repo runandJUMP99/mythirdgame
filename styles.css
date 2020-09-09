@@ -31,10 +31,13 @@ body {
 .stats-display {
     display: flex;
     justify-content: space-between;
-    margin: 0 4rem;
     position: fixed;
     top: 3rem;
-    width: 90%;
+    width: 100%;
+}
+
+.stats-display h3 {
+    margin: 0 4rem;
 }
 
 .grid {

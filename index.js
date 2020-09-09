@@ -349,13 +349,15 @@ function levelOne() {
 function levelTwo() {
     level++;
     levelDisplay.innerHTML = "Level: " + level;
+    
+    body.style.background = "#1d2d50";
+    body.style.color = "white";
+    dino.style.background = "#eff48e";
+    grid.style.borderColor = "#eff48e";
 
     //FIRST CHUNK
     generateObstacle("top", 2280);
     setTimeout(() => {
-        body.style.background = "#1d2d50";
-        body.style.color = "white";
-        dino.style.background = "#eff48e";
 
         generateObstacle("bottom");
 
@@ -578,7 +580,6 @@ function levelThree() {
     levelDisplay.innerHTML = "Level: " + level;
 
     body.style.background = "black";
-    body.style.color = "white";
     dino.style.background = "white";
     grid.style.borderColor = "white";
     
@@ -951,7 +952,7 @@ function levelFour() {
     levelDisplay.innerHTML = "Level: " + level;
 
     body.style.background = "#810202";
-    body.style.color = "white";
+    body.style.color = "#f1f3f8";
     dino.style.background = "#575757";
     grid.style.borderColor = "#575757";
 
@@ -1294,11 +1295,273 @@ function levelFour() {
 }
 
 function levelFive() {
-    alert("Level 5! (Lesson Coming Soon)");
+    level++;
+    levelDisplay.innerHTML = "Level: " + level;
+
+    body.style.background = "#393b44";
+    dino.style.background = "#8d93ab";
+    grid.style.borderColor = "#8d93ab";
+
+    //FIRST CHUNK
+    generateObstacle("bottom", 50);
+
+    setTimeout(() => {
+        generateObstacle("top", 50);
+
+        setTimeout(() => {
+            generateObstacle("bottom", 50);
+
+            setTimeout(() => {
+                generateObstacle("top", 50);
+
+                setTimeout(() => {
+                    generateObstacle("bottom", 50);
+
+                    setTimeout(() => {
+                        generateObstacle("top", 50);
+
+                        setTimeout(() => {
+                            generateObstacle("bottom", 50);
+
+                            setTimeout(() => {
+                                generateObstacle("top", 50);
+
+                                setTimeout(() => {
+                                    generateObstacle("bottom", 50);
+
+                                    setTimeout(() => {
+                                        generateObstacle("top", 50);
+
+                                        setTimeout(() => {
+                                            generateObstacle("bottom", 50);
+
+                                            setTimeout(() => {
+                                                generateObstacle("top", 50);
+
+                                                setTimeout(() => {
+                                                    generateObstacle("bottom", 50);
+
+                                                    setTimeout(() => {
+                                                        generateObstacle("top", 50);
+
+                                                        setTimeout(() => {
+                                                            generateObstacle("bottom", 50);
+
+                                                            setTimeout(() => {
+                                                                generateObstacle("top", 50);
+                                                            }, 250);
+                                                        }, 250);
+                                                    }, 250);
+                                                }, 250);
+                                            }, 250);
+                                        }, 250);
+                                    }, 250);
+                                }, 250);
+                            }, 250);
+                        }, 250);
+                    }, 250);
+                }, 250);
+            }, 250);
+        }, 250);
+    }, 250);
+
+    //SECOND CHUNK
+    setTimeout(() => {
+        generateObstacle("bottom", 50);
+
+        setTimeout(() => {
+            generateObstacle("top", 50);
+
+            setTimeout(() => {
+                generateObstacle("bottom", 50);
+
+                setTimeout(() => {
+                    generateObstacle("top", 50);
+
+                    setTimeout(() => {
+                        generateObstacle("bottom", 50);
+
+                        setTimeout(() => {
+                            generateObstacle("top", 50);
+
+                            setTimeout(() => {
+                                generateObstacle("bottom", 50);
+
+                                setTimeout(() => {
+                                    level--;
+                                    levelDisplay.innerHTML = "Level: " + level;
+                                
+                                    body.style.background = "#810202";
+                                    dino.style.background = "#575757";
+                                    grid.style.borderColor = "#575757";
+
+                                    generateObstacle("top", 50);
+                                }, 250);
+                            }, 250);
+                        }, 250);
+                    }, 250);
+                }, 250);
+            }, 250);
+        }, 250);
+    }, 4000);
+
+    //THIRD CHUNK
+    setTimeout(() => {
+        generateObstacle("bottom", 75);
+
+        setTimeout(() => {
+            generateObstacle("top", 75);
+
+            setTimeout(() => {
+                generateObstacle("bottom", 75);
+
+                setTimeout(() => {
+                    generateObstacle("top", 75);
+
+                    setTimeout(() => {
+                        generateObstacle("bottom", 75);
+
+                        setTimeout(() => {
+                            generateObstacle("top", 75);
+
+                            setTimeout(() => {
+                                generateObstacle("bottom", 75);
+
+                                setTimeout(() => {
+                                    level--;
+                                    levelDisplay.innerHTML = "Level: " + level;
+                                
+                                    body.style.background = "black";
+                                    body.style.color = "white";
+                                    dino.style.background = "white";
+                                    grid.style.borderColor = "white";
+
+                                    generateObstacle("top", 75);
+                                }, 250);
+                            }, 250);
+                        }, 250);
+                    }, 250);
+                }, 250);
+            }, 250);
+        }, 250);
+    }, 6000);
+
+    //FOURTH CHUNK
+    setTimeout(() => {
+        generateObstacle("bottom", 75);
+
+        setTimeout(() => {
+            generateObstacle("top", 75);
+
+            setTimeout(() => {
+                generateObstacle("bottom", 75);
+
+                setTimeout(() => {
+                    generateObstacle("top", 75);
+
+                    setTimeout(() => {
+                        generateObstacle("bottom", 75);
+
+                        setTimeout(() => {
+                            generateObstacle("top", 75);
+
+                            setTimeout(() => {
+                                generateObstacle("bottom", 75);
+
+                                setTimeout(() => {
+                                    level--;
+                                    levelDisplay.innerHTML = "Level: " + level;
+                                
+                                    body.style.background = "#1d2d50";
+                                    dino.style.background = "#eff48e";
+                                    grid.style.borderColor = "#eff48e";
+
+                                    generateObstacle("top", 75);
+                                }, 250);
+                            }, 250);
+                        }, 250);
+                    }, 250);
+                }, 250);
+            }, 250);
+        }, 250);
+    }, 6000);
+
+    //FIFTH CHUNK
+    setTimeout(() => {
+        generateObstacle("bottom", 75);
+
+        setTimeout(() => {
+            generateObstacle("top", 75);
+
+            setTimeout(() => {
+                generateObstacle("bottom", 75);
+
+                setTimeout(() => {
+                    generateObstacle("top", 75);
+
+                    setTimeout(() => {
+                        generateObstacle("bottom", 75);
+
+                        setTimeout(() => {
+                            generateObstacle("top", 75);
+
+                            setTimeout(() => {
+                                generateObstacle("bottom", 75);
+
+                                setTimeout(() => {
+                                    level--;
+                                    levelDisplay.innerHTML = "Level: " + level;
+                                
+                                    body.style.background = "white";
+                                    body.style.color = "black";
+                                    dino.style.background = "red";
+                                    grid.style.borderColor = "black";
+
+                                    generateObstacle("top", 75);
+                                    
+                                    setTimeout(() => {
+                                        isGameOver = true;
+                                        alertMessage.innerHTML = "Oh.";
+                                        
+                                        setTimeout(() => {
+                                            while (grid.childNodes[2]) {
+                                                grid.removeChild(grid.childNodes[2]);
+                                            }
+
+                                            alertMessage.innerHTML = "You're still here?";
+
+                                            setTimeout(() => {
+                                                alertMessage.innerHTML = "Well then... I guess some congratulations are in order...";
+                                                
+                                                setTimeout(() => {
+                                                    alertMessage.innerHTML = "You are congratulated.";
+                                                    
+                                                    setTimeout(() => {
+                                                        alertMessage.innerHTML = "Looks like we're back to where we started.";
+
+                                                        setTimeout(() => {
+                                                            alertMessage.innerHTML = startButton.outerHTML;
+                                                            alertMessage.addEventListener("click", startGame);
+                                                        }, 3500);
+                                                    }, 3500);
+                                                }, 3500);
+                                            }, 3500);
+                                        }, 3500);
+                                    }, 3500);
+                                }, 250);
+                            }, 250);
+                        }, 250);
+                    }, 250);
+                }, 250);
+            }, 250);
+        }, 250);
+    }, 8000);
 }
 
+startButton.addEventListener("click", startGame);
 
-startButton.addEventListener("click", function() {
+function startGame() {
+    isGameOver = false;
     alertMessage.innerHTML = alertMessages[0];
     levelDisplay.innerHTML = "Level: " + level;
     score.innerHTML = "Score: " + time;
@@ -1307,4 +1570,4 @@ startButton.addEventListener("click", function() {
     updateTime();
     
     levelOne();
-});
+}
