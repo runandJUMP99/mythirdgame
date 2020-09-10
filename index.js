@@ -160,9 +160,12 @@ function generateObstacle(location, length) {
         }
 
         if (obstacleDistance > 0 && obstacleDistance < 60 && ((obstacle.style.bottom === "0px" && position <= 50) || (obstacle.style.top === "0px" && position >= 240))) {
-            clearInterval(timerId);
-            alertMessage.innerHTML = "Game Over";
             isGameOver = true;
+            clearInterval(timerId);
+
+            if (alertMessage.innerHTML !== "<button><a href='/'>Play again?</a></button>") {
+                alertMessage.innerHTML = "Game Over";
+            }
 
             setTimeout(() => {
                 alertMessage.innerHTML = "<button><a href='/'>Play again?</a></button>";
@@ -1539,33 +1542,35 @@ function levelFive() {
                                         generateObstacle("top", 75);
                                         
                                         setTimeout(() => {
-                                            isGameOver = true;
-                                            alertMessage.innerHTML = "Oh.";
-                                            
-                                            setTimeout(() => {
-                                                while (grid.childNodes[2]) {
-                                                    grid.removeChild(grid.childNodes[2]);
-                                                }
-    
-                                                alertMessage.innerHTML = "You're still here?";
-    
+                                            if (!isGameOver) {
+                                                isGameOver = true;
+                                                alertMessage.innerHTML = "Oh.";
+                                                
                                                 setTimeout(() => {
-                                                    alertMessage.innerHTML = "Well then... I guess some congratulations are in order...";
-                                                    
+                                                    while (grid.childNodes[2]) {
+                                                        grid.removeChild(grid.childNodes[2]);
+                                                    }
+        
+                                                    alertMessage.innerHTML = "You're still here?";
+        
                                                     setTimeout(() => {
-                                                        alertMessage.innerHTML = "You are congratulated.";
+                                                        alertMessage.innerHTML = "Well then... I guess some congratulations are in order...";
                                                         
                                                         setTimeout(() => {
-                                                            alertMessage.innerHTML = "Looks like we're back to where we started.";
-    
+                                                            alertMessage.innerHTML = "You are congratulated.";
+                                                            
                                                             setTimeout(() => {
-                                                                alertMessage.innerHTML = startButton.outerHTML;
-                                                                alertMessage.addEventListener("click", startGame);
+                                                                alertMessage.innerHTML = "Looks like we're back to where we started.";
+        
+                                                                setTimeout(() => {
+                                                                    alertMessage.innerHTML = startButton.outerHTML;
+                                                                    alertMessage.addEventListener("click", startGame);
+                                                                }, 3500);
                                                             }, 3500);
                                                         }, 3500);
                                                     }, 3500);
                                                 }, 3500);
-                                            }, 3500);
+                                            }
                                         }, 3500);
                                     }, 250);
                                 }, 250);
@@ -1592,6 +1597,6 @@ function startGame() {
     updateTime();
     
     setTimeout(() => {
-        levelOne();
+        levelFive();
     }, 1000);
 }
