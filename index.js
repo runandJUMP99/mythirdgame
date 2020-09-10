@@ -1597,6 +1597,6 @@ function startGame() {
     updateTime();
     
     setTimeout(() => {
-        levelFive();
+        levelOne();
     }, 1000);
 }
